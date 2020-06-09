@@ -2,29 +2,22 @@ import asyncio
 import datetime
 import os
 
+import click
+import dateutil.parser
+from dateutil.parser import ParserError
+
 from exc_loader.cbr_get_rub import cbr_rub_page_loader, cbr_rub_page_parser
 from exc_loader.cbr_get_usd import cbr_usd_xml_loader, cbr_usd_xml_parser
 from exc_loader.models import RawExchange, Exchange
 from exc_loader.other_exc_loader import Collector
 from exc_loader.ranges import get_days
 
-EXCHANGE_DATA_DIRECTORY = os.path.join(os.getcwd(), "exchange_data")
-BACKUP_DATA_DIRECTORY = os.path.join(os.getcwd(), "backup")
 
-
-def load_exc(start: datetime.datetime, end: datetime.datetime, filename: str, append: bool):
+def load_exc(start: datetime.datetime, end: datetime.datetime, output_filename: str, backup: str, append: bool):
     data = {}
 
-    backup = "backup_" + datetime.datetime.now().strftime("%Y-%m-%d") + ".csv"
-    backup = os.path.join(BACKUP_DATA_DIRECTORY, backup)
-    dirname = os.path.dirname(backup)
-    print(dirname)
-
-    if not os.path.isdir(dirname):
-        os.makedirs(dirname)
-
-    with open(filename, "w" if not append else "a") as f, open(backup, "w" if not append else "a",
-                                                               encoding="utf8") as b:
+    with open(output_filename, "w" if not append else "a") as f, open(backup, "w" if not append else "a",
+                                                                      encoding="utf8") as b:
         last_correct_usd_raw_records = None
         last_correct_usd_date = None
 
@@ -100,19 +93,44 @@ def load_exc(start: datetime.datetime, end: datetime.datetime, filename: str, ap
             print(f"Complete: {day.date()}")
 
 
-if __name__ == "__main__":
-    start = datetime.datetime(2020, 1, 20)
-    end = datetime.datetime(2020, 5, 10)
+@click.group()
+def cli():
+    pass
+
+
+@cli.command()
+@click.option('--output', default=os.path.join(os.getcwd(), "exchange_data"), help='Output directory')
+@click.option('--backup', default=os.path.join(os.getcwd(), "backup"), help='Backup data directory')
+@click.argument('start_date')
+@click.argument('end_date')
+def run(output: str, backup: str, start_date: str, end_date: str):
+    """Example: `python run app.py 2019.01.01 2020.01.01`"""
+    for path in (output, backup):
+        if not os.path.isdir(path):
+            os.makedirs(path)
+
+    try:
+        start = dateutil.parser.parse(start_date)
+        end = dateutil.parser.parse(end_date)
+    except ParserError as e:
+        click.echo(e)
+        return
+
     now = datetime.datetime.now()
     # fake = datetime.datetime(2020, 3, 3)
 
-    for p in (EXCHANGE_DATA_DIRECTORY, BACKUP_DATA_DIRECTORY):
-        if not os.path.isdir(p):
-            os.makedirs(p)
+    output_path = os.path.join(output, f"curr_{now.strftime('%Y-%m-%d')}.csv")
+    backup_filename = "backup_" + datetime.datetime.now().strftime("%Y-%m-%d") + ".csv"
+    backup_path = os.path.join(backup, backup_filename)
 
-    outfile_path = os.path.join(EXCHANGE_DATA_DIRECTORY, f"curr_{now.strftime('%Y-%m-%d')}.csv")
+    click.echo(f" [x] Output: [{output_path}]. Backup: [{backup_path}]")
 
-    load_exc(start, end, outfile_path, False)
-    c = Collector(outfile_path)
+    load_exc(start, end, output_path, backup_path, False)
+    c = Collector(output_path)
     currs = {"MMK": (start, end)}
     asyncio.get_event_loop().run_until_complete(c.download(currs))
+    click.echo('Complete')
+
+
+if __name__ == "__main__":
+    cli()

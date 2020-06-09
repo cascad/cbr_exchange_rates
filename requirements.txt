@@ -5,3 +5,5 @@ aiohttp
 requests
 openpyxl
 tqdm
+python-dateutil
+click
