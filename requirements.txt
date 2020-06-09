@@ -1,0 +1,7 @@
+pandas
+lxml
+cssselect
+aiohttp
+requests
+openpyxl
+tqdm

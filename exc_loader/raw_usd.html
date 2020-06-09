@@ -1,0 +1,1345 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="format-detection" content="telephone=no" />
+<meta name="zoom:lang" content="ru" />
+    <meta name="zoom:last-modified" content="Thu, 19 Mar 2020 21:00:00 GMT" />
+<title>Курсы валют к&#160;доллару США&#160;на&#160;заданную дату | Банк России</title>
+
+
+
+
+
+
+            <link rel="stylesheet" type="text/css" href="/common/libs/jquery-ui/jquery-ui.min.css?v=v3348762655" media="all">
+
+            <!--[if IE 9]><link rel="stylesheet" type="text/css" href="/common/style/main-ie9.css?v=v2629878408" media="all"><![endif]-->
+
+            <!--[if gt IE 9]><!--><link rel="stylesheet" type="text/css" href="/common/style/main.css?v=v2662245512" media="all"><!--<![endif]-->
+
+
+        <script type="text/javascript" src="/common/libs/jquery-3.4.1.min.js?v=v906141912"></script>
+
+        <script type="text/javascript" src="/common/libs/jquery-ui/jquery-ui.min.js?v=v906141912"></script>
+
+        <script type="text/javascript" src="/common/libs/jquery.inputmask.min.js?v=v089173232"></script>
+
+        <script type="text/javascript" src="/common/scripts/vendor.js?v=v2662245512"></script>
+
+        <script type="text/javascript" src="/common/libs/jquery.floatThead.min.js?v=v3348762655"></script>
+
+        <script type="text/javascript" src="/common/scripts/main.min.js?v=v2662245512"></script>
+
+
+        <script type="text/javascript" src="/common/libs/localization-ru.js?v=v1110665999"></script>
+
+
+        <script type="text/javascript" src="/js/jquery.cookie.min.js?v=v4260771145"></script>
+
+        <script type="text/javascript" src="/js/site.js?v=v089096591"></script>
+
+
+
+
+
+<script src="/Modules/Queries/Scripts/queries-ui.js?v=v662783731" type="text/javascript"></script>
+    <script type="text/javascript">
+    $(function () {
+        var $menu = $('[data-menu]'),
+            $menuItemBtn = $menu.find('[data-menu-item-btn]'),
+            $menuShow = $('[data-menu-show]'),
+            $menuClose = $('[data-menu-close]');
+        var config = $menu.data('config');
+
+        $menu.find('.header_right').html($('#header .header_right').html());
+
+        $menuShow.on('click.cms_loadwholesite', function (event) {
+            loadWholeSite(true);
+        });
+        $menuShow.on('mouseenter.cms_loadwholesite', function (event) {
+            loadWholeSite(false);
+        });
+
+        var xhr = null, g_openMenu = false;
+        function loadWholeSite(openmenu) {
+            g_openMenu = g_openMenu || openmenu;
+            $menuShow.off('click.cms_loadwholesite mouseenter.cms_loadwholesite');
+            if (xhr === null) {
+                $('.menu_wrap .networks-circle').html($('.networks-circle.footer_networks').html());
+                $('.menu_wrap .header_search').html($('.header .offsetMenu .header_search').html());
+
+                xhr = $.ajax(config.url, {
+                    dataType: "html",
+                    method: "get",
+                    success: function (html) {
+                        $('[data-cms-wholesite-placeholder]').replaceWith(html);
+
+                        app.init($menu);
+
+                        for (var i in config.catalogPath) {
+                            $menu.find('li[data-catalog-id="' + config.catalogPath[i] + '"]')
+                                .addClass("_active");
+                            $menu.find('li[data-catalog-id="' + config.catalogPath[i] + '"]')
+                                .closest('[data-tabs-content]')
+                                .trigger('open-anchor');
+                        }
+
+
+                        xhr = true;
+                    },
+                    error: function () {
+                        xhr = null;
+                    }
+                });
+            }
+        }
+    });
+    </script>
+
+
+<script>
+    if (window.localStorage) {
+        if (localStorage.getItem('vision-impaired'))
+            document.getElementsByTagName('html')[0].className += ' vision-impaired';
+    }
+</script>
+<script>
+    document.documentElement.style.setProperty('--scrollbar-width', '17px');
+    setTimeout(function () {
+
+        var div = document.createElement('div');
+
+        div.style.overflowY = 'scroll';
+        div.style.width = '50px';
+        div.style.height = '50px';
+
+
+        div.style.visibility = 'hidden';
+
+        document.body.appendChild(div);
+        var scrollWidth = Math.max(div.offsetWidth - div.clientWidth, 0.15);
+        document.body.removeChild(div);
+
+        document.documentElement.style.setProperty('--scrollbar-width', scrollWidth + 'px');
+    }, 0);
+</script>
+
+
+
+
+</head>
+<body>
+
+
+    <!-- Yandex.Metrika counter -->
+    <script type="text/javascript">
+        (function (d, w, c) {
+            (w[c] = w[c] || []).push(function () {
+                try {
+                    w.yaCounter5774506 = new Ya.Metrika({
+                        id: 5774506,
+                        clickmap: true,
+                        trackLinks: true,
+                        accurateTrackBounce: true,
+                        webvisor: true,
+                        trackHash: true,
+                        ut: "noindex"
+                    });
+                } catch (e) { }
+            });
+
+            var n = d.getElementsByTagName("script")[0],
+                s = d.createElement("script"),
+                f = function () { n.parentNode.insertBefore(s, n); };
+            s.type = "text/javascript";
+            s.async = true;
+            s.src = "https://mc.yandex.ru/metrika/watch.js";
+
+            if (w.opera == "[object Opera]") {
+                d.addEventListener("DOMContentLoaded", f, false);
+            } else { f(); }
+        })(document, window, "yandex_metrika_callbacks");
+    </script>
+    <noscript><div><img src="https://mc.yandex.ru/watch/5774506?ut=noindex" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+    <!-- /Yandex.Metrika counter -->
+
+
+
+<div class="old-site-version" data-old-site-version="">
+    <div class="old-site-version_close" data-old-site-version-close=""></div>
+    <div class="offsetMenu">
+            <div class="old-site-version_text">
+                Сайт Центрального банка Российской Федерации был обновлен. Вы можете воспользоваться старой версией сайта по ссылке <a href="http://old.cbr.ru">old.cbr.ru</a>.
+            </div>
+    </div>
+</div>
+    <div class="header-print">
+        <div class="offsetMenu">
+            <div class="header-print_inner">
+                <img class="header-print_logo" alt="cbr" src="/common/images/logo.svg">
+                <ul class="header-print_contacts">
+<li>ул. Неглинная, 12, Москва, 107016</li>
+
+<li><nobr class="phone">8 800 300-30-00</nobr></li>
+<li>www.cbr.ru</li>
+</ul>
+
+
+            </div>
+        </div>
+    </div>
+    <header class="header" id="header">
+        <div class="top-line" data-top-line="">
+            <div class="offsetMenu">
+                <div class="col-md-23 offset-md-1">
+                    <div class="top-line_inner header_inner">
+                        <div class="row">
+                            <div class="col-xl-5 col-md-9">
+                                <div class="header_left">
+                                        <div class="header_menu" data-menu-show=""></div>
+                                    <a class="header_logo" href="/"></a>
+                                </div>
+                            </div>
+                            <div class="col-xl-17 col-md-13 offset-md-1 header_block">
+                                <div class="header_search">
+                                        <a class="header_search_btn" href="#" data-search-form-show="" title="поиск">
+        <div class="header_search_icon"></div><span class="d-none d-xl-block">Поиск по сайту</span>
+    </a>
+
+
+                                </div>
+                                <div class="d-none d-md-block">
+                                    <div class="header_right">
+                                        <div class="header_link"><a href="/reception/">Интернет-приемная</a></div>
+<div class="header_lang">
+            <div class="header_lang_item _active"><span><!--noindex-->RU<!--/noindex--></span></div>
+            <div class="header_lang_item"><a href="/Localization/SwitchLanguage?url=%2Fhd_base%2Fseldomc%2Fsc_daily%2F&amp;from=ru-RU&amp;to=en-GB"><!--noindex-->EN<!--/noindex--></a></div>
+</div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="offsetMenu">
+            <div class="col-md-23 offset-md-1">
+                <div class="header_inner">
+                    <div class="row">
+                        <div class="col-xl-5 col-md-9">
+                            <div class="header_left">
+                                    <div class="header_menu" data-menu-show=""></div>
+                                <a class="header_logo" href="/"></a>
+                            </div>
+                        </div>
+                        <div class="col-xl-17 col-md-13 offset-md-1 header_block">
+                            <div class="header_search">
+                                    <a class="header_search_btn" href="#" data-search-form-show="" title="поиск">
+        <div class="header_search_icon"></div><span class="d-none d-xl-block">Поиск по сайту</span>
+    </a>
+
+
+                            </div>
+                            <div class="d-none d-md-block">
+                                <div class="header_right">
+                                    <div class="header_link"><a href="/reception/">Интернет-приемная</a></div>
+<div class="header_lang">
+            <div class="header_lang_item _active"><span><!--noindex-->RU<!--/noindex--></span></div>
+            <div class="header_lang_item"><a href="/Localization/SwitchLanguage?url=%2Fhd_base%2Fseldomc%2Fsc_daily%2F&amp;from=ru-RU&amp;to=en-GB"><!--noindex-->EN<!--/noindex--></a></div>
+</div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <form class="search-form" action="/search/" method="get" data-search-form="">
+    <div class="offsetMenu">
+        <div class="col-md-23 offset-md-1">
+            <div class="search-form_inner">
+                <div class="search-form_title">Что вы хотите найти?</div>
+                <div class="search-form_content">
+                    <div class="search-form_block">
+                        <div class="search-form_icon"></div>
+                        <div class="search-form_field">
+                            <input name="text" type="text" placeholder="Начните писать" data-search-form-input="" />
+                        </div>
+                    </div>
+                    <div class="search-form_btn">
+                        <button class="b-btn _blue" data-search-form-btn="">Искать</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+
+
+
+
+<div class="menu_wrap" data-menu="" data-config="{&quot;catalogPath&quot;:[21540,21539,16493],&quot;url&quot;:&quot;/Catalog/SiteMap/GetWholeSiteHtml?blockId=59191&quot;}">
+    <div class="offsetMenu">
+        <div class="header_menu _close menu_close d-none d-md-block" data-menu-close=""></div>
+        <div class="header_inner top-line_inner d-block d-md-none">
+            <div class="row">
+                <div class="col-xl-5 col-md-9">
+                    <div class="header_left">
+                        <div class="header_menu _close" data-menu-close=""></div><a class="header_logo" href="/"></a>
+                    </div>
+                </div>
+                <div class="col-xl-17 col-md-13 offset-md-1 header_block">
+                    <div class="header_search"></div>
+                </div>
+            </div>
+        </div>
+        <div class="menu row" data-tabs="data-tabs">
+            <div class="menu_quick col-md-7">
+                <div class="menu_quick_tabs">
+                    <a class="menu_tab _active" href="#" data-tabs-tab="1">Деятельность</a>
+                    <a class="menu_tab" href="#" data-tabs-tab="2">Документы и данные</a>
+                    <a class="menu_tab" href="#" data-tabs-tab="3">О Банке России</a>
+                    <a class="menu_tab" href="#" data-tabs-tab="4">Сервисы</a>
+                </div>
+                <div class="menu_quick_links">
+                    <div class="phones"><a class="menu_phone_val" href="tel:+74993003000">
+<div class="plus">+</div>7 499 300-30-00</a><a class="menu_phone_val" href="tel:88003003000">8 800 300-30-00</a><a class="menu_phone_val" href="tel:300">300</a><span>Круглосуточно, бесплатно для абонентов Билайн, Мегафон, МТС, Теле2, Yota</span></div>
+<div class="inner_links"><a href="/news/" title="Новости">Новости</a><a href="/rbr/" title="Решения Банка России">Решения Банка России</a><a href="/contacts/" title="Контактная информация">Контактная информация</a><a href="/sitemap" title="Карта сайта">Карта сайта</a><a href="/about/" title="О сайте">О сайте</a></div>
+<div class="networks-circle"><a class="networks-circle_item _fb" href="https://www.facebook.com/cbr.ru/" title="Facebook"></a><a class="networks-circle_item _vk" href="https://vk.com/cbr_official" title="ВКонтакте"></a><a class="networks-circle_item _tw" href="https://twitter.com/bank_of_russia" title="Twitter"></a><a class="networks-circle_item _yt" href="https://www.youtube.com/user/BankofRussia" title="Youtube"></a></div>
+                </div>
+            </div>
+            <div class="d-md-none link-above">
+                <div class="header_right"></div>
+            </div>
+            <div class="menu_content_container col-md with-centered-loader" data-cms-wholesite-placeholder="">
+            </div>
+        </div>
+    </div>
+</div>
+
+
+    <div id="content">
+        <div class="offsetMenu">
+            <div class="container-fluid">
+                <div class="col-md-23 offset-md-1">
+                    <div class="breadcrumbs">
+    <div class="breadcrumbs_item"><a class="breadcrumbs_home" href="/"></a></div>
+        <div class="breadcrumbs_item">
+            <a href="/hd_base/"><!--noindex-->Базы данных<!--/noindex--></a>
+        </div>
+        <div class="breadcrumbs_item">
+            <a href="/hd_base/seldomc/"><!--noindex-->Котировки редких валют предоставляемые агентством &#171;Thomson Reuters&#187;<!--/noindex--></a>
+        </div>
+    </div>
+
+
+                    <!--index-->
+<h1><span class="referenceable">Курсы валют к&#160;доллару США&#160;на&#160;заданную дату</span>
+</h1>
+
+
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+<!--
+    var UniDbQuery_Data = {};
+// -->
+</script>
+
+        <!--noindex-->
+<div class="block-part">
+<form action="/hd_base/seldomc/sc_daily/" data-auto-submit="true" method="post"><input id="UniDbQuery_Posted" name="UniDbQuery.Posted" type="hidden" value="True" />        <div class="block-part vertical" id="UniDbQuery_form">
+
+
+
+
+    <div class="filters_wrapper">
+        <div class="filters">
+
+
+
+    <div class="filter" >
+            <div class="datepicker-filter" data-datepicker-filter
+         data-min-date="12.01.2010"
+         data-max-date="20.03.2020"
+         data-default-value="20.03.2020">
+        <input class="datepicker-filter_input" type="hidden" name="UniDbQuery.To" value="20.03.2020" />
+        <button class="datepicker-filter_button" type="button">20.03.2020</button>
+        <div class="datepicker-filter_modal">
+            <div class="datepicker-filter_head">
+                <div class="datepicker-filter_close"></div>
+            </div>
+            <div class="datepicker-filter_body">
+                <div class="datepicker-filter_datepicker datepicker-custom"></div>
+            </div>
+        </div>
+    </div>
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        </div>
+    </div>
+
+
+
+
+
+
+
+        </div>
+</form></div>        <!--/noindex-->
+<div class="table-wrapper">
+  <div class="table-caption gray">
+		  Данные на 20.03.2020. Предоставлены агентством «<a href="http://thomsonreuters.ru/" class="outerlink">Thomson Reuters</a>»
+		</div>
+  <div class="table">
+    <table class="data">
+      <tr>
+        <th>Цифр. код</th>
+        <th>Букв. код</th>
+        <th>Валюта</th>
+        <th>
+				Тип котировки*
+			  </th>
+        <th>Курс</th>
+      </tr>
+      <tr>
+        <td>008</td>
+        <td>ALL </td>
+        <td>Албанский лек</td>
+        <td>Прямая</td>
+        <td>114,3050</td>
+      </tr>
+      <tr>
+        <td>012</td>
+        <td>DZD </td>
+        <td>Алжирский динар</td>
+        <td>Прямая</td>
+        <td>122,8350</td>
+      </tr>
+      <tr>
+        <td>973</td>
+        <td>AOA </td>
+        <td>Ангольская кванза</td>
+        <td>Прямая</td>
+        <td>518,3750</td>
+      </tr>
+      <tr>
+        <td>032</td>
+        <td>ARS </td>
+        <td>Аргентинское песо</td>
+        <td>Прямая</td>
+        <td>63,4635</td>
+      </tr>
+      <tr>
+        <td>533</td>
+        <td>AWG </td>
+        <td>Арубанский флорин</td>
+        <td>Прямая</td>
+        <td>1,8100</td>
+      </tr>
+      <tr>
+        <td>971</td>
+        <td>AFN </td>
+        <td>Афганский афгани</td>
+        <td>Прямая</td>
+        <td>75,9500</td>
+      </tr>
+      <tr>
+        <td>044</td>
+        <td>BSD </td>
+        <td>Багамский доллар</td>
+        <td>Прямая</td>
+        <td>1,0000</td>
+      </tr>
+      <tr>
+        <td>050</td>
+        <td>BDT </td>
+        <td>Бангладешская така</td>
+        <td>Прямая</td>
+        <td>84,8300</td>
+      </tr>
+      <tr>
+        <td>052</td>
+        <td>BBD </td>
+        <td>Барбадосский доллар</td>
+        <td>Прямая</td>
+        <td>2,0191</td>
+      </tr>
+      <tr>
+        <td>048</td>
+        <td>BHD </td>
+        <td>Бахрейнский динар</td>
+        <td>Прямая</td>
+        <td>0,3776</td>
+      </tr>
+      <tr>
+        <td>084</td>
+        <td>BZD </td>
+        <td>Белизский доллар</td>
+        <td>Прямая</td>
+        <td>2,0157</td>
+      </tr>
+      <tr>
+        <td>060</td>
+        <td>BMD </td>
+        <td>Бермудский доллар</td>
+        <td>Прямая</td>
+        <td>1,0000</td>
+      </tr>
+      <tr>
+        <td>068</td>
+        <td>BOB </td>
+        <td>Боливийский боливиано</td>
+        <td>Прямая</td>
+        <td>6,9100</td>
+      </tr>
+      <tr>
+        <td>072</td>
+        <td>BWP </td>
+        <td>Ботсванская пула</td>
+        <td>Обратная</td>
+        <td>0,0850</td>
+      </tr>
+      <tr>
+        <td>096</td>
+        <td>BND </td>
+        <td>Брунейский доллар</td>
+        <td>Прямая</td>
+        <td>1,4455</td>
+      </tr>
+      <tr>
+        <td>108</td>
+        <td>BIF </td>
+        <td>Бурундийский франк</td>
+        <td>Прямая</td>
+        <td>1 888,4400</td>
+      </tr>
+      <tr>
+        <td>064</td>
+        <td>BTN </td>
+        <td>Бутанский нгултрум</td>
+        <td>Прямая</td>
+        <td>74,9850</td>
+      </tr>
+      <tr>
+        <td>548</td>
+        <td>VUV </td>
+        <td>Вануатский вату</td>
+        <td>Прямая</td>
+        <td>123,6600</td>
+      </tr>
+      <tr>
+        <td>928</td>
+        <td>VES </td>
+        <td>Венесуэльский боливар cоберано</td>
+        <td>Прямая</td>
+        <td>72 169,7429</td>
+      </tr>
+      <tr>
+        <td>951</td>
+        <td>XCD </td>
+        <td>Восточно - карибский доллар</td>
+        <td>Прямая</td>
+        <td>2,7100</td>
+      </tr>
+      <tr>
+        <td>704</td>
+        <td>VND </td>
+        <td>Вьетнамский донг</td>
+        <td>Прямая</td>
+        <td>23 460,0000</td>
+      </tr>
+      <tr>
+        <td>332</td>
+        <td>HTG </td>
+        <td>Гаитский гурд</td>
+        <td>Прямая</td>
+        <td>95,2635</td>
+      </tr>
+      <tr>
+        <td>328</td>
+        <td>GYD </td>
+        <td>Гайанский доллар</td>
+        <td>Прямая</td>
+        <td>208,8250</td>
+      </tr>
+      <tr>
+        <td>270</td>
+        <td>GMD </td>
+        <td>Гамбийский даласи</td>
+        <td>Прямая</td>
+        <td>51,2500</td>
+      </tr>
+      <tr>
+        <td>936</td>
+        <td>GHS </td>
+        <td>Ганский седи</td>
+        <td>Прямая</td>
+        <td>5,5450</td>
+      </tr>
+      <tr>
+        <td>320</td>
+        <td>GTQ </td>
+        <td>Гватемальский кетсаль</td>
+        <td>Прямая</td>
+        <td>7,6300</td>
+      </tr>
+      <tr>
+        <td>324</td>
+        <td>GNF </td>
+        <td>Гвинейский франк</td>
+        <td>Прямая</td>
+        <td>9 542,5000</td>
+      </tr>
+      <tr>
+        <td>292</td>
+        <td>GIP </td>
+        <td>Гибралтарский фунт</td>
+        <td>Обратная</td>
+        <td>1,1712</td>
+      </tr>
+      <tr>
+        <td>340</td>
+        <td>HNL </td>
+        <td>Гондурасская лемпира</td>
+        <td>Прямая</td>
+        <td>24,7410</td>
+      </tr>
+      <tr>
+        <td>981</td>
+        <td>GEL </td>
+        <td>Грузинский лари</td>
+        <td>Прямая</td>
+        <td>3,0855</td>
+      </tr>
+      <tr>
+        <td>807</td>
+        <td>MKD </td>
+        <td>Денар Республики Македония</td>
+        <td>Прямая</td>
+        <td>57,2050</td>
+      </tr>
+      <tr>
+        <td>784</td>
+        <td>AED </td>
+        <td>Дирхам ОАЭ</td>
+        <td>Прямая</td>
+        <td>3,6730</td>
+      </tr>
+      <tr>
+        <td>930</td>
+        <td>STN </td>
+        <td>Добра Сан-Томе и Принсипи</td>
+        <td>Прямая</td>
+        <td>22,8426</td>
+      </tr>
+      <tr>
+        <td>516</td>
+        <td>NAD </td>
+        <td>Доллар Намибии</td>
+        <td>Прямая</td>
+        <td>17,1735</td>
+      </tr>
+      <tr>
+        <td>090</td>
+        <td>SBD </td>
+        <td>Доллар Соломоновых Островов</td>
+        <td>Обратная</td>
+        <td>0,1206</td>
+      </tr>
+      <tr>
+        <td>780</td>
+        <td>TTD </td>
+        <td>Доллар Тринидада и Тобаго</td>
+        <td>Прямая</td>
+        <td>6,7567</td>
+      </tr>
+      <tr>
+        <td>242</td>
+        <td>FJD </td>
+        <td>Доллар Фиджи</td>
+        <td>Обратная</td>
+        <td>0,4235</td>
+      </tr>
+      <tr>
+        <td>214</td>
+        <td>DOP </td>
+        <td>Доминиканское песо</td>
+        <td>Прямая</td>
+        <td>53,7200</td>
+      </tr>
+      <tr>
+        <td>818</td>
+        <td>EGP </td>
+        <td>Египетский фунт</td>
+        <td>Прямая</td>
+        <td>15,7500</td>
+      </tr>
+      <tr>
+        <td>967</td>
+        <td>ZMW </td>
+        <td>Замбийская квача</td>
+        <td>Прямая</td>
+        <td>16,9875</td>
+      </tr>
+      <tr>
+        <td>360</td>
+        <td>IDR </td>
+        <td>Индонезийская рупия</td>
+        <td>Прямая</td>
+        <td>16 172,5150</td>
+      </tr>
+      <tr>
+        <td>400</td>
+        <td>JOD </td>
+        <td>Иорданский динар</td>
+        <td>Прямая</td>
+        <td>0,7090</td>
+      </tr>
+      <tr>
+        <td>368</td>
+        <td>IQD </td>
+        <td>Иракский динар</td>
+        <td>Прямая</td>
+        <td>1 193,8100</td>
+      </tr>
+      <tr>
+        <td>364</td>
+        <td>IRR </td>
+        <td>Иранский риал</td>
+        <td>Прямая</td>
+        <td>42 000,0000</td>
+      </tr>
+      <tr>
+        <td>352</td>
+        <td>ISK </td>
+        <td>Исландская крона</td>
+        <td>Прямая</td>
+        <td>139,3500</td>
+      </tr>
+      <tr>
+        <td>886</td>
+        <td>YER </td>
+        <td>Йеменский риал</td>
+        <td>Прямая</td>
+        <td>250,3000</td>
+      </tr>
+      <tr>
+        <td>116</td>
+        <td>KHR </td>
+        <td>Камбоджийский риель</td>
+        <td>Прямая</td>
+        <td>4 080,0000</td>
+      </tr>
+      <tr>
+        <td>634</td>
+        <td>QAR </td>
+        <td>Катарский риал</td>
+        <td>Прямая</td>
+        <td>3,6410</td>
+      </tr>
+      <tr>
+        <td>404</td>
+        <td>KES </td>
+        <td>Кенийский шиллинг</td>
+        <td>Прямая</td>
+        <td>105,9000</td>
+      </tr>
+      <tr>
+        <td>598</td>
+        <td>PGK </td>
+        <td>Кина Папуа-Новой Гвинеи</td>
+        <td>Обратная</td>
+        <td>0,2925</td>
+      </tr>
+      <tr>
+        <td>170</td>
+        <td>COP </td>
+        <td>Колумбийское песо</td>
+        <td>Прямая</td>
+        <td>4 089,0000</td>
+      </tr>
+      <tr>
+        <td>174</td>
+        <td>KMF </td>
+        <td>Коморский франк</td>
+        <td>Прямая</td>
+        <td>443,5000</td>
+      </tr>
+      <tr>
+        <td>977</td>
+        <td>BAM </td>
+        <td>Конвертируемая марка</td>
+        <td>Прямая</td>
+        <td>1,8254</td>
+      </tr>
+      <tr>
+        <td>976</td>
+        <td>CDF </td>
+        <td>Конголезский франк</td>
+        <td>Прямая</td>
+        <td>1 707,5000</td>
+      </tr>
+      <tr>
+        <td>188</td>
+        <td>CRC </td>
+        <td>Костариканский колон</td>
+        <td>Прямая</td>
+        <td>565,5000</td>
+      </tr>
+      <tr>
+        <td>192</td>
+        <td>CUP </td>
+        <td>Кубинское песо</td>
+        <td>Прямая</td>
+        <td>1,0000</td>
+      </tr>
+      <tr>
+        <td>414</td>
+        <td>KWD </td>
+        <td>Кувейтский динар</td>
+        <td>Прямая</td>
+        <td>0,3114</td>
+      </tr>
+      <tr>
+        <td>418</td>
+        <td>LAK </td>
+        <td>Лаосский кип</td>
+        <td>Прямая</td>
+        <td>8 928,0000</td>
+      </tr>
+      <tr>
+        <td>430</td>
+        <td>LRD </td>
+        <td>Либерийский доллар</td>
+        <td>Прямая</td>
+        <td>199,5100</td>
+      </tr>
+      <tr>
+        <td>422</td>
+        <td>LBP </td>
+        <td>Ливанский фунт</td>
+        <td>Прямая</td>
+        <td>1 512,0000</td>
+      </tr>
+      <tr>
+        <td>434</td>
+        <td>LYD </td>
+        <td>Ливийский динар</td>
+        <td>Прямая</td>
+        <td>1,4233</td>
+      </tr>
+      <tr>
+        <td>480</td>
+        <td>MUR </td>
+        <td>Маврикийская рупия</td>
+        <td>Прямая</td>
+        <td>39,3500</td>
+      </tr>
+      <tr>
+        <td>929</td>
+        <td>MRU </td>
+        <td>Мавританская угия</td>
+        <td>Прямая</td>
+        <td>37,6000</td>
+      </tr>
+      <tr>
+        <td>454</td>
+        <td>MWK </td>
+        <td>Малавийская квача</td>
+        <td>Прямая</td>
+        <td>736,5800</td>
+      </tr>
+      <tr>
+        <td>969</td>
+        <td>MGA </td>
+        <td>Малагасийский ариари</td>
+        <td>Прямая</td>
+        <td>3 765,0000</td>
+      </tr>
+      <tr>
+        <td>458</td>
+        <td>MYR </td>
+        <td>Малайзийский ринггит</td>
+        <td>Прямая</td>
+        <td>4,3865</td>
+      </tr>
+      <tr>
+        <td>462</td>
+        <td>MVR </td>
+        <td>Мальдивская руфия</td>
+        <td>Прямая</td>
+        <td>15,4600</td>
+      </tr>
+      <tr>
+        <td>504</td>
+        <td>MAD </td>
+        <td>Марокканский дирхам</td>
+        <td>Прямая</td>
+        <td>9,7913</td>
+      </tr>
+      <tr>
+        <td>484</td>
+        <td>MXN </td>
+        <td>Мексиканское песо</td>
+        <td>Прямая</td>
+        <td>23,5190</td>
+      </tr>
+      <tr>
+        <td>943</td>
+        <td>MZN </td>
+        <td>Мозамбикский метикал</td>
+        <td>Прямая</td>
+        <td>66,3250</td>
+      </tr>
+      <tr>
+        <td>496</td>
+        <td>MNT </td>
+        <td>Монгольский тугрик</td>
+        <td>Прямая</td>
+        <td>2 775,0000</td>
+      </tr>
+      <tr>
+        <td>524</td>
+        <td>NPR </td>
+        <td>Непальская рупия</td>
+        <td>Прямая</td>
+        <td>119,9400</td>
+      </tr>
+      <tr>
+        <td>566</td>
+        <td>NGN </td>
+        <td>Нигерийская найра</td>
+        <td>Прямая</td>
+        <td>306,6500</td>
+      </tr>
+      <tr>
+        <td>558</td>
+        <td>NIO </td>
+        <td>Никарагуанская золотая кордоба</td>
+        <td>Прямая</td>
+        <td>33,7350</td>
+      </tr>
+      <tr>
+        <td>554</td>
+        <td>NZD </td>
+        <td>Новозеландский доллар</td>
+        <td>Обратная</td>
+        <td>0,5821</td>
+      </tr>
+      <tr>
+        <td>376</td>
+        <td>ILS </td>
+        <td>Новый израильский шекель</td>
+        <td>Прямая</td>
+        <td>3,5975</td>
+      </tr>
+      <tr>
+        <td>901</td>
+        <td>TWD </td>
+        <td>Новый тайваньский доллар</td>
+        <td>Прямая</td>
+        <td>30,2590</td>
+      </tr>
+      <tr>
+        <td>512</td>
+        <td>OMR </td>
+        <td>Оманский риал</td>
+        <td>Прямая</td>
+        <td>0,3850</td>
+      </tr>
+      <tr>
+        <td>776</td>
+        <td>TOP </td>
+        <td>Паанга Королевства Тонга</td>
+        <td>Обратная</td>
+        <td>0,4344</td>
+      </tr>
+      <tr>
+        <td>586</td>
+        <td>PKR </td>
+        <td>Пакистанская рупия</td>
+        <td>Прямая</td>
+        <td>159,2000</td>
+      </tr>
+      <tr>
+        <td>600</td>
+        <td>PYG </td>
+        <td>Парагвайский гуарани</td>
+        <td>Прямая</td>
+        <td>6 643,0000</td>
+      </tr>
+      <tr>
+        <td>446</td>
+        <td>MOP </td>
+        <td>Патака Макао</td>
+        <td>Прямая</td>
+        <td>8,0030</td>
+      </tr>
+      <tr>
+        <td>604</td>
+        <td>PEN </td>
+        <td>Перуанский соль</td>
+        <td>Прямая</td>
+        <td>3,5546</td>
+      </tr>
+      <tr>
+        <td>222</td>
+        <td>SVC </td>
+        <td>Сальвадорский колон</td>
+        <td>Прямая</td>
+        <td>8,7545</td>
+      </tr>
+      <tr>
+        <td>682</td>
+        <td>SAR </td>
+        <td>Саудовский риял</td>
+        <td>Прямая</td>
+        <td>3,7608</td>
+      </tr>
+      <tr>
+        <td>748</td>
+        <td>SZL </td>
+        <td>Свазилендский лилангени</td>
+        <td>Прямая</td>
+        <td>17,1735</td>
+      </tr>
+      <tr>
+        <td>408</td>
+        <td>KPW </td>
+        <td>Северокорейская вона</td>
+        <td>Прямая</td>
+        <td>130,0000</td>
+      </tr>
+      <tr>
+        <td>690</td>
+        <td>SCR </td>
+        <td>Сейшельская рупия</td>
+        <td>Прямая</td>
+        <td>13,7050</td>
+      </tr>
+      <tr>
+        <td>941</td>
+        <td>RSD </td>
+        <td>Сербский динар</td>
+        <td>Прямая</td>
+        <td>109,0200</td>
+      </tr>
+      <tr>
+        <td>760</td>
+        <td>SYP </td>
+        <td>Сирийский фунт</td>
+        <td>Прямая</td>
+        <td>436,5000</td>
+      </tr>
+      <tr>
+        <td>706</td>
+        <td>SOS </td>
+        <td>Сомалийский шиллинг</td>
+        <td>Прямая</td>
+        <td>578,5000</td>
+      </tr>
+      <tr>
+        <td>938</td>
+        <td>SDG </td>
+        <td>Суданский фунт</td>
+        <td>Прямая</td>
+        <td>55,1277</td>
+      </tr>
+      <tr>
+        <td>968</td>
+        <td>SRD </td>
+        <td>Суринамский доллар</td>
+        <td>Прямая</td>
+        <td>7,4750</td>
+      </tr>
+      <tr>
+        <td>694</td>
+        <td>SLL </td>
+        <td>Сьерра-Леонский леоне</td>
+        <td>Прямая</td>
+        <td>9 719,2100</td>
+      </tr>
+      <tr>
+        <td>764</td>
+        <td>THB </td>
+        <td>Таиландский бат</td>
+        <td>Прямая</td>
+        <td>32,5450</td>
+      </tr>
+      <tr>
+        <td>834</td>
+        <td>TZS </td>
+        <td>Танзанийский шиллинг</td>
+        <td>Прямая</td>
+        <td>2 306,0000</td>
+      </tr>
+      <tr>
+        <td>788</td>
+        <td>TND </td>
+        <td>Тунисский динар</td>
+        <td>Прямая</td>
+        <td>2,9284</td>
+      </tr>
+      <tr>
+        <td>800</td>
+        <td>UGX </td>
+        <td>Угандийский шиллинг</td>
+        <td>Прямая</td>
+        <td>3 832,5000</td>
+      </tr>
+      <tr>
+        <td>858</td>
+        <td>UYU </td>
+        <td>Уругвайское песо</td>
+        <td>Прямая</td>
+        <td>45,9550</td>
+      </tr>
+      <tr>
+        <td>608</td>
+        <td>PHP </td>
+        <td>Филиппинское писо</td>
+        <td>Прямая</td>
+        <td>51,1100</td>
+      </tr>
+      <tr>
+        <td>262</td>
+        <td>DJF </td>
+        <td>Франк Джибути</td>
+        <td>Прямая</td>
+        <td>178,0250</td>
+      </tr>
+      <tr>
+        <td>950</td>
+        <td>XAF </td>
+        <td>Франк КФА ВЕАС</td>
+        <td>Прямая</td>
+        <td>611,6200</td>
+      </tr>
+      <tr>
+        <td>952</td>
+        <td>XOF </td>
+        <td>Франк КФА ВСЕАО</td>
+        <td>Прямая</td>
+        <td>583,7000</td>
+      </tr>
+      <tr>
+        <td>646</td>
+        <td>RWF </td>
+        <td>Франк Руанды</td>
+        <td>Прямая</td>
+        <td>952,0285</td>
+      </tr>
+      <tr>
+        <td>654</td>
+        <td>SHP </td>
+        <td>Фунт Св. Елены</td>
+        <td>Обратная</td>
+        <td>1,1654</td>
+      </tr>
+      <tr>
+        <td>238</td>
+        <td>FKP </td>
+        <td>Фунт Фолклендских островов</td>
+        <td>Обратная</td>
+        <td>1,1712</td>
+      </tr>
+      <tr>
+        <td>191</td>
+        <td>HRK </td>
+        <td>Хорватская куна</td>
+        <td>Прямая</td>
+        <td>7,0602</td>
+      </tr>
+      <tr>
+        <td>152</td>
+        <td>CLP </td>
+        <td>Чилийское песо</td>
+        <td>Прямая</td>
+        <td>862,3000</td>
+      </tr>
+      <tr>
+        <td>144</td>
+        <td>LKR </td>
+        <td>Шри-Ланкийская рупия</td>
+        <td>Прямая</td>
+        <td>187,0500</td>
+      </tr>
+      <tr>
+        <td>232</td>
+        <td>ERN </td>
+        <td>Эритрейская накфа</td>
+        <td>Прямая</td>
+        <td>15,0750</td>
+      </tr>
+      <tr>
+        <td>132</td>
+        <td>CVE </td>
+        <td>Эскудо Кабо-Верде</td>
+        <td>Прямая</td>
+        <td>103,0050</td>
+      </tr>
+      <tr>
+        <td>230</td>
+        <td>ETB </td>
+        <td>Эфиопский быр</td>
+        <td>Прямая</td>
+        <td>32,6000</td>
+      </tr>
+      <tr>
+        <td>388</td>
+        <td>JMD </td>
+        <td>Ямайский доллар</td>
+        <td>Прямая</td>
+        <td>135,5000</td>
+      </tr>
+    </table>
+  </div>
+  <div class="table-caption">
+    <p>* Прямая – количество заданной валюты за один доллар США.<br>
+			Обратная - количество долларов США за единицу заданной валюты</p>
+  </div>
+</div>
+
+
+                    <!--/index-->
+
+    <div class="page-info">
+        <!--noindex-->
+
+
+
+<div class="page-info_helpful"
+     data-page-feedback=""
+     data-feedback-url="/Content/PageInfo/RegisterFeedback">
+    <!--noindex-->
+    <div class="helpful" data-helpful="">
+        Страница была полезной?
+        <div class="helpful_btns">
+            <button class="helpful_btn _yes" data-helpful-btn="yes"><i class="helpful_icon"></i><span>Да</span></button>
+            <button class="helpful_btn _no" data-helpful-btn="no"><i class="helpful_icon"></i><span>Нет</span></button>
+        </div>
+    </div>
+    <!--/noindex-->
+</div>
+
+            <div class="page-info_last-update">Последнее обновление страницы: 20.03.2020</div>
+        <!--/noindex-->
+    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer" id="footer">
+        <div class="offsetMenu">
+            <div class="footer_main">
+                <div class="col-md-23 col-xl-22 offset-md-1 offset-xl-2">
+                    <div class="footer_top">
+                        <a class="footer_logo" href="/"></a>
+                        <div class="footer_up gotoUp">
+                            <div class="footer_up_title">Наверх</div>
+                            <div class="footer_up_icon"></div>
+                        </div>
+                    </div>
+
+<div class="footer_contacts">
+<div class="footer_address">ул. Неглинная, 12, Москва, 107016</div>
+<div class="footer_phones">
+<div class="footer_phone"><a class="footer_phone_val" href="tel:88003003000">8&nbsp;800 300-30-00</a><span>(для бесплатных звонков из&nbsp;регионов России)</span></div>
+<div class="footer_phone"><a class="footer_phone_val" href="tel:+74993003000">+7&nbsp;499 300-30-00</a><span>(круглосуточно)</span></div>
+<div class="footer_phone"><a class="footer_phone_val" href="tel:300">300</a><span>(круглосуточно, бесплатно для&nbsp;абонентов Билайн, Мегафон, МТС, Теле2, Yota)</span></div>
+</div>
+</div>
+<div class="footer_main_block">
+<div class="footer_left-menu">
+<div class="footer_left-menu_item"><a href="/lk_uio/">Личный кабинет участников рынка</a></div>
+<div class="footer_left-menu_item"><a href="/about_br/irp/">Отношения с&nbsp;инвесторами</a></div>
+<div class="footer_left-menu_item"><a href="/rbr/list_inside/">Перечень инсайдерской информации Банка России</a></div>
+<div class="footer_left-menu_item"><a href="/of_na_vr/">Официальное опубликование нормативных актов Банка России</a></div>
+<div class="footer_left-menu_item"><a href="/project_na/">Проекты нормативных актов Банка России</a></div>
+</div>
+<div class="networks-circle footer_networks"><a class="networks-circle_item _fb" href="https://www.facebook.com/cbr.ru/"></a><a class="networks-circle_item _vk" href="https://vk.com/cbr_official"></a><a class="networks-circle_item _tw" href="https://twitter.com/bank_of_russia"></a><a class="networks-circle_item _yt" href="https://www.youtube.com/user/BankofRussia"></a></div>
+</div>
+<div class="footer_menu">
+<div class="footer_menu_items">
+<div class="footer_menu_item"><a href="/about/">О&nbsp;сайте</a></div>
+<div class="footer_menu_item"><a href="/contacts/">Контакты</a></div>
+<div class="footer_menu_item"><a href="/about_br/anticor/">Противодействие коррупции</a></div>
+<div class="footer_menu_item"><a href="/development/">Технические ресурсы</a></div>
+</div>
+			 <div class="footer_menu_item _visually-impaired"><a href="#" title="Версия для слабовидящих"><span class="visually-impaired-on">Версия для&nbsp;слабовидящих</span><span class="visually-impaired-off">Обычная версия</span></a></div>
+</div>
+
+
+                </div>
+            </div>
+            <div class="footer_bottom">
+                <div class="col-md-23 col-xl-22 offset-md-1 offset-xl-2 row">
+                    <div class="footer_bottom_text col-md-12 col-xl-11">&#169; Банк России, 2000–2020.</div>
+<div class="footer_bottom_aic col-md-11">Дизайн сайта — <a href="https://aic.ru" target="_blank"><img src="/common/images/icons/aic-logo.svg" /></a></div>
+
+
+                </div>
+            </div>
+        </div>
+    </footer>
+
+        <div class="popup-cookies" data-popup-cookies>
+        <div class="popup-cookies_title">
+            На сайте Банка России используются файлы cookie
+        </div>
+        <div class="popup-cookies_subtitle">
+            Оставаясь на <a href="/">www.cbr.ru</a>, вы соглашаетесь
+            с <a href='/user_agreement/'>пользовательским соглашением</a>
+        </div>
+        <button class="btn _medium _blue " data-popup-cookies-btn>
+            Подтвердить
+        </button>
+    </div>
+
+
+
+<!--[if IE 9]><script>$('body').addClass('ie9')</script><![endif]-->
+<script src="/Modules/Content/Scripts/PageInfo.js?v=v3116962712" type="text/javascript"></script>
+    <script type="text/javascript">
+        $(function () {
+            Content_PageInfo.init($('[data-page-feedback]'));
+        });
+    </script>
+
+
+
+</body>
+</html>
